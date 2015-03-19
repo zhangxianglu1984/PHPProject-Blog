@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<css href='__PUBLIC__/Css/public.css' />
+	</head>
+	<body>
+		<form action="<{:U('runUpdate')}>" method='POST'>
+			<table class='table'>
+				<tr>
+					<th colspan="2" style='text-align: left;'>修改栏目</th>
+				</tr>
+				
+				<tr>
+					<td align="right">栏目名称：</td>
+					<td>
+						<input type='text' name='name' value="<{$record['name']}>"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td align="right">栏目排序：</td>
+					<td>
+						<input type='text' name='sort' value="<{$record['sort']}>" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td align="right">父级栏目：</td>
+					<td>
+						<select name='parent_id'>
+							<option value='0'>根栏目</option>
+							<volist name='categories' id='category' key='index'>
+								<option value="<{$category['id']}>"
+									<eq name="record['parent_id']" value="$category['id']">
+										selected="selected"
+									</eq>
+								>
+									<{//生成缩进}>
+									<for start='1' end="mb_substr_count($category['xpath'],'-')" comparison="elt">
+										--
+									</for>
+									<{$category['name']}>
+								</option>
+							</volist>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="center">
+						<input type='hidden' name='id' value="<{$record['id']}>" />
+						<input type='hidden' name='path' value="<{$record['path']}>" />
+						<input type='submit' value='保存' />
+					</td>
+				</tr>
+				
+			</table>
+		</form>
+	</body>
+</html>

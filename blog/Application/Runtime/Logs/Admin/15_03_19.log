@@ -1,0 +1,3 @@
+[ 2015-03-19T14:41:08+08:00 ] 127.0.0.1 /blog/admin.php/Category/runUpdate
+ERR: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'name' at row 1
+

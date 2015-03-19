@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<css href='__PUBLIC__/Css/public.css' />
+	</head>
+	<body>
+		<form action="<{:U('runCreate')}>" method="POST">
+			<table class='table'>
+				<tr>
+					<th colspan="2" style='text-align: left;'>添加博文</th>
+				</tr>
+				
+				<tr>
+					<td align="right">标题：</td>
+					<td>
+						<input type='text' name='title' value="" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td align="right">栏目：</td>
+					<td>
+						<select name='category_id'>
+							<option value=''>=====请选择=====</option>
+							<volist name='categories' id='category' key='index' mod='2'>
+								<option value="<{$category['id']}>">
+									<{//生成缩进}>
+									<for start='1' end="mb_substr_count($category['xpath'],'-')" comparison="lt">
+										--
+									</for>
+									<{$category['name']}>
+								</option>
+							</volist>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td align="right">属性：</td>
+					<td>
+						<volist name='attributes' id='attribute' key='index' mod='2'>
+							<input type='checkbox' name='attribute_id[]' value="<{$attribute['id']}>" />
+							<{$attribute['name']}>&nbsp;&nbsp;&nbsp;&nbsp;
+						</volist>
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="center">
+						<textarea id='content' name='content'></textarea>
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="center">
+						<input type='submit' value='保存' />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

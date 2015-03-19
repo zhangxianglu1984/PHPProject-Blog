@@ -1,0 +1,30 @@
+[ 2015-03-18T09:59:12+08:00 ] 127.0.0.1 /blog/admin.php/Category/index
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'group statement'
+
+[ 2015-03-18T09:59:36+08:00 ] 127.0.0.1 /blog/admin.php/Category/index
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'group statement'
+
+[ 2015-03-18T10:00:57+08:00 ] 127.0.0.1 /blog/admin.php/Category/index
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'group statement'
+
+[ 2015-03-18T10:01:02+08:00 ] 127.0.0.1 /blog/admin.php/Category/index
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'group statement'
+
+[ 2015-03-18T10:02:20+08:00 ] 127.0.0.1 /blog/admin.php/Category/index
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'group statement'
+
+[ 2015-03-18T11:27:16+08:00 ] 127.0.0.1 /blog/admin.php/Category/runUpdate
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%' at line 1
+
+[ 2015-03-18T11:32:48+08:00 ] 127.0.0.1 /blog/admin.php/Category/runUpdate
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%0-2%%' at line 1
+
+[ 2015-03-18T11:35:50+08:00 ] 127.0.0.1 /blog/admin.php/Category/runUpdate
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''%s' at line 1
+
+[ 2015-03-18T11:38:03+08:00 ] 127.0.0.1 /blog/admin.php/Category/runUpdate
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty
+
+[ 2015-03-18T11:40:05+08:00 ] 127.0.0.1 /blog/admin.php/Category/runUpdate
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty
+

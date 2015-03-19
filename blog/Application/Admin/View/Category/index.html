@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<css href='__PUBLIC__/Css/public.css' />
+	</head>
+	<body>
+		<form action="<{:U('sort')}>" method='POST'>
+			<table class='table'>
+				<tr>
+					<th style='text-align: left;' colspan="5">栏目列表</th>
+				</tr>
+				<tr>
+					<th style='text-align: center; width: 20px;'>序号</th>
+					<th style='text-align: center;'>名称</th>
+					<th style='text-align: center; width: 20px;'>排序</th>
+					<th style='text-align: center; width: 20px;'>层级</th>
+					<th style='text-align: center;'>操作</th>
+				</tr>
+				
+				<volist name='records' id='category' key='index' mod='2'>
+					<tr>
+						<td align="left"><{$index}></td>
+						<td align="left">
+							<{$category['html']}>
+							<{$category['name']}>
+						</td>
+						<td align="left">
+							<input type='text' name="sort[<{$category['id']}>]" value="<{$category['sort']}>" />
+						</td>
+						<td align="left">
+							<{$category['level']}>
+						</td>
+						<td align="left">
+							[<a href="<{:U('create',array('parent_id'=>$category['id']))}>">添加子栏目</a>]
+							[<a href="<{:U('update',array('id'=>$category['id']))}>">修改</a>]
+							[<a href="<{:U('delete',array('id'=>$category['id']))}>">删除</a>]
+						</td>
+					</tr>
+				</volist>
+				
+				<tr>
+					<td align="center" colspan="5">
+						<input type='submit' value='保存排序' />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

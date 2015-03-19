@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<css href='__PUBLIC__/Css/public.css' />
+	</head>
+	<body>
+		<table class='table'>
+			<tr>
+				<th style='text-align: left;' colspan="5">博文属性类表</th>
+			</tr>
+			<tr>
+				<th style='text-align: center; width: 20px;'>序号</th>
+				<th style='text-align: center;'>名称</th>
+				<th style='text-align: center;'>颜色</th>
+				<th style='text-align: center;'>操作</th>
+			</tr>
+			
+			<volist name='records' id='attribute' key='index' mod='2'>
+				<tr>
+					<td align="left">
+						<{$index}>
+					</td>
+					<td align="left">
+						<{$attribute['name']}>
+					</td>
+					<td align="left">
+						<div style="width: 20px;height: 20px; background: <{$attribute['color']}>;"></div>
+					</td>
+					<td align="left">
+						[<a href="<{:U('update',array('id'=>$attribute['id']))}>">修改</a>]
+						[<a href="<{:U('runDelete',array('id'=>$attribute['id']))}>">删除</a>]
+					</td>
+				</tr>
+			</volist>
+			
+			<tr>
+				<td align="center" colspan="5">
+					<input type='submit' value='保存排序' />
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
